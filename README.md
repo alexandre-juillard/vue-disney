@@ -1,29 +1,14 @@
-# vue3-ghibli
+# vue3-ghibli-axios
+Comment solliciter une api avec axios et vue3
 
-This template should help get you started developing with Vue 3 in Vite.
 
-## Recommended IDE Setup
+## Lien vers l'api GHIBLI 
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+[Doc API Ghibli](https://ghibliapi.herokuapp.com/)
+[Tous les films](https://ghibliapi.herokuapp.com/films)
 
-## Customize configuration
+## Deux routes à créer
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+Une route qui liste tous les films
+Une route qui permet l'affichage d'un film 
 
-## Project Setup
-
-```sh
-npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
