@@ -4,7 +4,8 @@ Comment solliciter une api avec axios et vue3
 
 ## Lien vers l'api GHIBLI 
 
-[Doc API Ghibli](https://ghibliapi.herokuapp.com/)
+[Doc API Ghibli](https://ghibliapi.herokuapp.com/)  
+
 [Tous les films](https://ghibliapi.herokuapp.com/films)
 
 ## Deux routes à créer
