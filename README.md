@@ -12,3 +12,6 @@ Comment solliciter une api avec axios et vue3
 Une route qui liste tous les films
 Une route qui permet l'affichage d'un film 
 
+## Installation d'axio pour les calls
+
+Axios n'est pas obligatoire mais c'est devenu un standard 
