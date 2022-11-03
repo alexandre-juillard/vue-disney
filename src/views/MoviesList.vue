@@ -1,9 +1,28 @@
 
 <script setup>
+import {ref,onMounted } from 'vue'
+import axios from 'axios'
+
+
+// const {status,data}    = allMovies
+
+const movies = ref([])
+
+// console.log(data)
+
+onMounted(async () => {
+    const allMovies = await axios.get('https://ghibliapi.herokuapp.com/films')
+
+    movies.value = allMovies.data
+})
+
+
+
 </script>
 
 <template>
   <div class="container">
+        <!-- component with nested async dependencies -->
         <table class="styled-table">
             <thead>
                 <tr>
@@ -12,16 +31,18 @@
                     <th>Year</th>
                     <th>Voir</th>
                 </tr>
-            </thead>
+            </thead> 
             <tbody>
-                <tr>
-                    <td>id</td>
-                    <td>title</td>
-                    <td>date</td>
+                <tr v-for="film in movies">
+                    <td>{{film.id}}</td>
+                    <td>{{film.title}}</td>
+                    <td>{{film.release_date}}</td>
                     <td>👀</td>
                 </tr>
             </tbody>
         </table>
+
+        
     </div>
 </template>
 
