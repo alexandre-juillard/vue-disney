@@ -13,7 +13,6 @@
                     <h2>Title</h2>
                     <h6>Date</h6>
                     <span> autre info </span>
-
                 </div>
             </div>
         </div>
