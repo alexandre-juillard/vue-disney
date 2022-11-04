@@ -1,5 +1,28 @@
 
 <script setup>
+import {ref,onMounted} from 'vue'
+import {useRoute} from "vue-router"
+import axios from 'axios'
+
+const GHIBLI_API = 'https://ghibliapi.herokuapp.com/films'
+
+const route = useRoute()
+
+const currentMovies = ref({})
+
+
+const {moviesId} = route.params 
+
+
+onMounted(async () => {
+	const oneFilmUrl = GHIBLI_API+'/'+moviesId
+    const oneMovie = await axios.get(oneFilmUrl)
+	// console.log(oneMovie)
+    currentMovies.value = oneMovie.data
+})
+
+
+
 </script>
 
 <template>
@@ -7,12 +30,13 @@
         <div class="film-container">
             <div class="film">
                 <div class="film-preview" >
-                    <img src='https://www.linflux.com/wp-content/uploads/2021/08/Ponyo.jpg' alt='affiche' />
+                    <img :src='currentMovies.image' alt='affiche' />
                 </div>
                 <div class="film-info">
-                    <h2>Title</h2>
-                    <h6>Date</h6>
-                    <span> autre info </span>
+                    <h2>{{currentMovies.title}}</h2>
+                    <h6>{{currentMovies.release_date}}</h6>
+                    <span>{{currentMovies.description
+}}</span>
                 </div>
             </div>
         </div>
