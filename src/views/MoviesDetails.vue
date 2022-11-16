@@ -1,25 +1,5 @@
 
 <script setup>
-import {ref,onMounted} from 'vue'
-import {useRoute} from "vue-router"
-import axios from 'axios'
-
-const GHIBLI_API = 'https://ghibliapi.herokuapp.com/films'
-
-const route = useRoute()
-
-const currentMovies = ref({})
-
-
-const {moviesId} = route.params 
-
-
-onMounted(async () => {
-	const oneFilmUrl = GHIBLI_API+'/'+moviesId
-    const oneMovie = await axios.get(oneFilmUrl)
-	// console.log(oneMovie)
-    currentMovies.value = oneMovie.data
-})
 
 
 
@@ -30,13 +10,12 @@ onMounted(async () => {
         <div class="film-container">
             <div class="film">
                 <div class="film-preview" >
-                    <img :src='currentMovies.image' alt='affiche' />
+                    <img src='https://fr.web.img2.acsta.net/pictures/21/02/09/12/46/1884055.jpg' alt='affiche' />
                 </div>
                 <div class="film-info">
-                    <h2>{{currentMovies.title}}</h2>
-                    <h6>{{currentMovies.release_date}}</h6>
-                    <span>{{currentMovies.description
-}}</span>
+                    <h2>title</h2>
+                    <h6>release date</h6>
+                    <span>description</span>
                 </div>
             </div>
         </div>

@@ -15,12 +15,8 @@ const router = createRouter({
       path: '/movies',
       name: 'moviesList',
       component: MoviesList
-    },
-    {
-      path: '/movies/:moviesId',
-      name: 'moviesDetails',
-      component: MoviesDetails
     }
+   
   ]
 })
 

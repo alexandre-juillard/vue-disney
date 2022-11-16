@@ -1,34 +1,6 @@
 
 <script setup>
 import {ref,onMounted } from 'vue'
-import {useRouter} from 'vue-router'
-import axios from 'axios'
-
-
-const router = useRouter()
-// const {status,data}    = allMovies
-
-const movies = ref([])
-
-// console.log(data)
-
-onMounted(async () => {
-    const allMovies = await axios.get('https://ghibliapi.herokuapp.com/films')
-    movies.value = allMovies.data
-})
-
-
-const goToMovies = moviesId =>{
-    // console.log({moviesId})
-    const routeOptions = {
-        name:'moviesDetails',
-        params:{
-            moviesId:moviesId
-        }
-    }
-
-    router.push(routeOptions)
-}
 
 
 </script>
@@ -46,11 +18,12 @@ const goToMovies = moviesId =>{
                 </tr>
             </thead> 
             <tbody>
-                <tr v-for="film in movies">
-                    <td>{{film.id}}</td>
-                    <td>{{film.title}}</td>
-                    <td>{{film.release_date}}</td>
-                    <td @click="goToMovies(film.id)">👀</td>
+                
+                <tr >
+                    <td>id</td>
+                    <td>title</td>
+                    <td>date</td>
+                    <td >👀</td>
                 </tr>
             </tbody>
         </table>
