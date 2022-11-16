@@ -1,13 +1,23 @@
 <script setup>
-import { onBeforeMount } from 'vue'
+import { onBeforeMount,ref } from 'vue'
 import axios from 'axios'
 
 const API_ALL_FILMS = 'https://ghibliapi.herokuapp.com/films'
 
+
+const movies = ref([])
+const isDataLoading = ref(true)
+
 onBeforeMount(async ()=>{
     console.log('ON BEFORE MOUNT')
     const allFilms = await axios.get(API_ALL_FILMS)
-    console.log(allFilms)
+    const {data,status} = allFilms 
+    if(status===200){
+        isDataLoading.value=false
+    }
+    movies.value = data
+
+    console.log(data)
 })
 
 
@@ -18,7 +28,9 @@ onBeforeMount(async ()=>{
 <template>
   <div class="container">
         <!-- component with nested async dependencies -->
-        <table class="styled-table">
+        <img v-if='isDataLoading' src='https://media3.giphy.com/media/tXL4FHPSnVJ0A/giphy.gif?cid=790b7611a81de646407fbf6283e4dba07c283ef0a8769292&rid=giphy.gif&ct=g' />
+        <table v-else class="styled-table">
+
             <thead>
                 <tr>
                     <th>Id</th>
@@ -28,11 +40,11 @@ onBeforeMount(async ()=>{
                 </tr>
             </thead> 
             <tbody>
-                
-                <tr >
-                    <td>id</td>
-                    <td>title</td>
-                    <td>date</td>
+                <tr v-for="movie in movies" :key="movie.id">
+                    <td>{{movie.id}}</td>
+                    <td>{{movie.title}}</td>
+                    <td>{{movie.release_date
+}}</td>
                     <td >👀</td>
                 </tr>
             </tbody>
