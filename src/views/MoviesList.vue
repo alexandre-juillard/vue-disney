@@ -1,6 +1,16 @@
-
 <script setup>
-import {ref,onMounted } from 'vue'
+import { onBeforeMount } from 'vue'
+import axios from 'axios'
+
+const API_ALL_FILMS = 'https://ghibliapi.herokuapp.com/films'
+
+onBeforeMount(async ()=>{
+    console.log('ON BEFORE MOUNT')
+    const allFilms = await axios.get(API_ALL_FILMS)
+    console.log(allFilms)
+})
+
+
 
 
 </script>
