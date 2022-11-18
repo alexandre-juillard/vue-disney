@@ -11,12 +11,11 @@ const isDataLoading = ref(true)
 onBeforeMount(async ()=>{
     console.log('ON BEFORE MOUNT')
     const allFilms = await axios.get(API_ALL_FILMS)
-    const {data,status} = allFilms 
+    const {data,status} = allFilms // object destructuring FTW!
     if(status===200){
         isDataLoading.value=false
     }
     movies.value = data
-
     console.log(data)
 })
 
