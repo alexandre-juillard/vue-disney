@@ -44,7 +44,7 @@ onBeforeMount(async ()=>{
                     <td>{{movie.title}}</td>
                     <td>{{movie.release_date
 }}</td>
-                    <td >👀</td>
+                    <td ><RouterLink :to="{name:'moviesDetails',params:{filmId:movie.id}}">👀</RouterLink></td>
                 </tr>
             </tbody>
         </table>

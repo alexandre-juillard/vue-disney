@@ -1,7 +1,11 @@
 
 <script setup>
 
+import { useRoute } from 'vue-router';
 
+const route = useRoute()
+
+console.log(route.params.filmId)
 
 </script>
 
@@ -13,7 +17,7 @@
                     <img src='https://fr.web.img2.acsta.net/pictures/21/02/09/12/46/1884055.jpg' alt='affiche' />
                 </div>
                 <div class="film-info">
-                    <h2>title</h2>
+                    <h2>title   {{route.params.filmId}}</h2>
                     <h6>release date</h6>
                     <span>description</span>
                 </div>
