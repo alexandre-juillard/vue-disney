@@ -1,7 +1,6 @@
 # vue3-axios
 Comment solliciter une api avec axios et vue3
 
-test
 
 ## Lien vers l'api MyAnimeList
 
