@@ -1,8 +1,6 @@
 <script setup>
 
 
-console.log(route.params.filmId)
-
 </script>
 
 <template>
@@ -10,12 +8,12 @@ console.log(route.params.filmId)
         <div class="film-container">
             <div class="film">
                 <div class="film-preview" >
-                    <img :src='currentMovie.image' alt='affiche' />
+                    <img src='https://cdn.myanimelist.net/images/anime/4/19644.jpg' alt='affiche' />
                 </div>
                 <div class="film-info">
-                    <h2>{{currentMovie.title}}</h2>
-                    <h6>{{currentMovie.release_date}}</h6>
-                    <span>{{currentMovie.description}}</span>
+                    <h2>Title</h2>
+                    <h6>Release Date</h6>
+                    <span>description</span>
                 </div>
             </div>
         </div>
