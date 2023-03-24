@@ -1,18 +1,18 @@
-# vue3-ghibli-axios
+# vue3-axios
 Comment solliciter une api avec axios et vue3
 
 
-## Lien vers l'api GHIBLI 
+## Lien vers l'api MyAnimeList
 
-[Doc API Ghibli](https://ghibliapi.herokuapp.com/)  
+[Doc API MyAnimeList](https://docs.api.jikan.moe/)  
 
-[Tous les films](https://ghibliapi.herokuapp.com/films)
+[Tous les anime](https://api.jikan.moe/v4/anime)
 
 ## Deux routes à créer
 
-Une route qui liste tous les films
-Une route qui permet l'affichage d'un film 
+Une route qui liste tous les anime
+Une route qui permet l'affichage d'un anime
 
-## Installation d'axio pour les calls
+## Installation d'axios pour les calls
 
 Axios n'est pas obligatoire mais c'est devenu un standard 
