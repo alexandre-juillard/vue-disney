@@ -1,6 +1,8 @@
 <script setup>
 
 
+console.log(route.params.filmId)
+
 </script>
 
 <template>
@@ -8,12 +10,12 @@
         <div class="film-container">
             <div class="film">
                 <div class="film-preview" >
-                    <img src='https://fr.web.img2.acsta.net/pictures/21/02/09/12/46/1884055.jpg' alt='affiche' />
+                    <img :src='currentMovie.image' alt='affiche' />
                 </div>
                 <div class="film-info">
-                    <h2>title</h2>
-                    <h6>release date</h6>
-                    <span>description</span>
+                    <h2>{{currentMovie.title}}</h2>
+                    <h6>{{currentMovie.release_date}}</h6>
+                    <span>{{currentMovie.description}}</span>
                 </div>
             </div>
         </div>
