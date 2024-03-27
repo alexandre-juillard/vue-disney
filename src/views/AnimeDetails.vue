@@ -1,5 +1,8 @@
-
 <script setup>
+<<<<<<< HEAD:src/views/MoviesDetails.vue
+=======
+
+>>>>>>> ea13c14d09ca189587f693ed2ac2d9afa5788390:src/views/AnimeDetails.vue
 
 </script>
 
@@ -8,11 +11,20 @@
         <div class="film-container">
             <div class="film">
                 <div class="film-preview" >
+<<<<<<< HEAD:src/views/MoviesDetails.vue
                     <img src='https://static.wikia.nocookie.net/disney/images/3/31/Profile_-_Baloo.jpeg' alt='char' />
                 </div>
                 <div class="film-info">
                     <h2>Baloo</h2>
                     <span>Tous les films []</span>
+=======
+                    <img src='https://cdn.myanimelist.net/images/anime/4/19644.jpg' alt='affiche' />
+                </div>
+                <div class="film-info">
+                    <h2>Title</h2>
+                    <h6>Release Date</h6>
+                    <span>description</span>
+>>>>>>> ea13c14d09ca189587f693ed2ac2d9afa5788390:src/views/AnimeDetails.vue
                 </div>
             </div>
         </div>

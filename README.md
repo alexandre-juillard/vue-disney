@@ -2,7 +2,7 @@
 Comment solliciter une api 
 L'api ghibli étant désormais down, on passe finalement sur une api disney
 
-## Lien vers l'api GHIBLI 
+## Lien vers l'api MyAnimeList
 
 [Doc API DISNEY](https://disneyapi.dev/docs/)  
 

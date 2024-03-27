@@ -1,4 +1,8 @@
 <script setup>
+<<<<<<< HEAD:src/views/MoviesList.vue
+=======
+
+>>>>>>> ea13c14d09ca189587f693ed2ac2d9afa5788390:src/views/AnimeList.vue
 
 </script>
 
@@ -15,9 +19,16 @@
             </thead> 
             <tbody>
                 <tr >
+<<<<<<< HEAD:src/views/MoviesList.vue
                     <td>ID</td>
                     <td>Name</td>
                     <td ><a href=''>👀</a></td>
+=======
+                    <td>id</td>
+                    <td>anime title</td>
+                    <td>Data</td>
+                    <td >👀</td>
+>>>>>>> ea13c14d09ca189587f693ed2ac2d9afa5788390:src/views/AnimeList.vue
                 </tr>
             </tbody>
         </table>
