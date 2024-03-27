@@ -1,18 +1,17 @@
 # vue3-ghibli-axios
-Comment solliciter une api avec axios et vue3
-
+Comment solliciter une api 
+L'api ghibli étant désormais down, on passe finalement sur une api disney
 
 ## Lien vers l'api GHIBLI 
 
-[Doc API Ghibli](https://ghibliapi.herokuapp.com/)  
+[Doc API DISNEY](https://disneyapi.dev/docs/)  
 
-[Tous les films](https://ghibliapi.herokuapp.com/films)
+[Tous les CHARACTER](https://api.disneyapi.dev/character)
 
 ## Deux routes à créer
 
-Une route qui liste tous les films
-Une route qui permet l'affichage d'un film 
+Une route qui liste tous les personnages
+Une route qui permet l'affichage d'un personnage
 
-## Installation d'axio pour les calls
-
-Axios n'est pas obligatoire mais c'est devenu un standard 
+## Installation d'axios pour les calls
+Il est également possible d'utiliser une library tierce pour les calls HTTP (axios, ky, got)
