@@ -1,30 +1,5 @@
 
 <script setup>
-import { useRoute } from 'vue-router';
-import { onBeforeMount,ref } from 'vue'
-import axios from 'axios'
-
-const API_ALL_FILMS = 'https://ghibliapi.herokuapp.com/films'
-
-
-const route = useRoute()
-const currentMovie = ref({})
-
-onBeforeMount(async ()=>{
-
-    const oneMovies = await axios.get(API_ALL_FILMS+'/'+route.params.filmId)
-	currentMovie.value = oneMovies.data
-    // const {data,status} = allFilms // object destructuring FTW!
-    // if(status===200){
-    //     isDataLoading.value=false
-    // }
-    // movies.value = data
-    // console.log(data)
-})
-
-
-
-console.log(route.params.filmId)
 
 </script>
 
@@ -33,12 +8,11 @@ console.log(route.params.filmId)
         <div class="film-container">
             <div class="film">
                 <div class="film-preview" >
-                    <img :src='currentMovie.image' alt='affiche' />
+                    <img src='https://static.wikia.nocookie.net/disney/images/3/31/Profile_-_Baloo.jpeg' alt='char' />
                 </div>
                 <div class="film-info">
-                    <h2>{{currentMovie.title}}</h2>
-                    <h6>{{currentMovie.release_date}}</h6>
-                    <span>{{currentMovie.description}}</span>
+                    <h2>Baloo</h2>
+                    <span>Tous les films []</span>
                 </div>
             </div>
         </div>

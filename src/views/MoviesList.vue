@@ -1,50 +1,23 @@
 <script setup>
-import { onBeforeMount,ref } from 'vue'
-import axios from 'axios'
-
-const API_ALL_FILMS = 'https://ghibliapi.herokuapp.com/films'
-
-
-const movies = ref([])
-const isDataLoading = ref(true)
-
-onBeforeMount(async ()=>{
-    console.log('ON BEFORE MOUNT')
-    const allFilms = await axios.get(API_ALL_FILMS)
-    const {data,status} = allFilms // object destructuring FTW!
-    if(status===200){
-        isDataLoading.value=false
-    }
-    movies.value = data
-    console.log(data)
-})
-
-
-
 
 </script>
 
 <template>
   <div class="container">
-        <!-- component with nested async dependencies -->
-        <img v-if='isDataLoading' src='https://media3.giphy.com/media/tXL4FHPSnVJ0A/giphy.gif?cid=790b7611a81de646407fbf6283e4dba07c283ef0a8769292&rid=giphy.gif&ct=g' />
-        <table v-else class="styled-table">
+        <table class="styled-table">
 
             <thead>
                 <tr>
                     <th>Id</th>
                     <th>Name</th>
-                    <th>Year</th>
                     <th>Voir</th>
                 </tr>
             </thead> 
             <tbody>
-                <tr v-for="movie in movies" :key="movie.id">
-                    <td>{{movie.id}}</td>
-                    <td>{{movie.title}}</td>
-                    <td>{{movie.release_date
-}}</td>
-                    <td ><RouterLink :to="{name:'moviesDetails',params:{filmId:movie.id}}">👀</RouterLink></td>
+                <tr >
+                    <td>ID</td>
+                    <td>Name</td>
+                    <td ><a href=''>👀</a></td>
                 </tr>
             </tbody>
         </table>
