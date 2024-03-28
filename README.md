@@ -1,4 +1,4 @@
-# vue3-ghibli-axios
+# vue3-disney-axios
 Comment solliciter une api 
 L'api ghibli étant désormais down, on passe finalement sur une api disney
 
