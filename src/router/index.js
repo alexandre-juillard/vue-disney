@@ -14,7 +14,12 @@ const router = createRouter({
       path: '/characters',
       name: 'charList',
       component: MoviesList
-    }  
+    },
+    {
+      path: '/character/:id',
+      name: 'charDetails',
+      component: MovieDetails
+    } 
   ]
 })
 

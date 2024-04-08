@@ -1,6 +1,26 @@
 
 <script setup>
 
+import {ref} from 'vue';
+import {useRoute} from 'vue-router';
+
+const route = useRoute();
+
+const perso = ref({});
+
+const fetchData = async (persoId) => {
+      try {
+        const response = await fetch("https://api.disneyapi.dev/character/"+persoId);
+        const character = await response.json();
+        perso.value = character.data;
+      } catch (error) {
+        console.error('Erreur lors de la récupération des détails de la donnée :', error);
+      }
+    };
+
+fetchData(route.params.id);
+console.log(perso.films);
+
 </script>
 
 <template>
@@ -8,11 +28,11 @@
         <div class="film-container">
             <div class="film">
                 <div class="film-preview" >
-                    <img src='https://static.wikia.nocookie.net/disney/images/3/31/Profile_-_Baloo.jpeg' alt='char' />
+                    <img :src='perso.imageUrl' alt='char' />
                 </div>
                 <div class="film-info">
-                    <h2>Baloo</h2>
-                    <span>Tous les films []</span>
+                    <h2>{{perso.name}}</h2>
+                    <span>Tous les films {{ perso.films }}</span>
                 </div>
             </div>
         </div>

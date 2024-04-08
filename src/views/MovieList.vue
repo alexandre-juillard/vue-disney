@@ -1,9 +1,23 @@
 <script setup>
+import {ref} from 'vue';
+import {RouterLink} from 'vue-router';
+
+const localCharacters = ref([]);
+
+async function afficherFilms() {
+  const reponse    = await fetch("https://api.disneyapi.dev/character");
+  const characters = await reponse.json();
+  localCharacters.value = characters.data
+  console.log(localCharacters.value);
+}
+
+afficherFilms();
 
 </script>
 
 <template>
   <div class="container">
+  
         <table class="styled-table">
 
             <thead>
@@ -14,10 +28,10 @@
                 </tr>
             </thead> 
             <tbody>
-                <tr >
-                    <td>ID</td>
-                    <td>Name</td>
-                    <td ><a href=''>👀</a></td>
+                <tr v-for="perso in localCharacters" :key="perso._id">
+                    <td>{{perso._id}}</td>
+                    <td>{{perso.name}}</td>
+                    <td ><RouterLink :to="{name: 'charDetails', params:{id: perso._id}}">👀</RouterLink></td>
                 </tr>
             </tbody>
         </table>
